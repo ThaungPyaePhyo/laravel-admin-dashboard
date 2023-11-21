@@ -1,7 +1,5 @@
 <div class="overflow-hidden mt-20">
-    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
-        type="button"
-        class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+    <button type="button" class="" id="toggleButton">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path clip-rule="evenodd" fill-rule="evenodd"
@@ -10,22 +8,22 @@
         </svg>
     </button>
 
-    <aside id="default-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0"
         aria-label="Sidebar">
-        <div class="h-full px-3 py-4 pt-28 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-            <ul class="space-y-2 font-medium">
+
+        <div class="h-full px-3 py-4 pt-20  overflow-y-auto bg-gray-50 dark:bg-gray-800" id="test">
+            <ul class="space-y-2 font-medium py-4">
                 <li>
-                    <a href="#"
+                    <a href="{{ route('dashboard') }}"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                       <i class="fa-solid fa-house fa-lg text-gray-400 group-hover:text-white"></i>
+                        <i class="fa-solid fa-house fa-lg text-gray-400 group-hover:text-white"></i>
                         <span class="ms-3">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                       <i class="fa-solid fa-bolt fa-lg text-gray-400 group-hover:text-white"></i>
+                        <i class="fa-solid fa-bolt fa-lg text-gray-400 group-hover:text-white"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
                         <span
                             class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
@@ -34,14 +32,14 @@
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                       <i class="fa-solid fa-users fa-lg text-gray-400 group-hover:text-white"></i>
+                        <i class="fa-solid fa-users fa-lg text-gray-400 group-hover:text-white"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">Customers</span>
                     </a>
                 </li>
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                       <i class="fa-solid fa-bag-shopping fa-lg text-gray-400 group-hover:text-white"></i>
+                        <i class="fa-solid fa-bag-shopping fa-lg text-gray-400 group-hover:text-white"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">Orders</span>
                     </a>
                 </li>
@@ -62,7 +60,7 @@
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                       <i class="fa-solid fa-user-group fa-lg text-gray-400 group-hover:text-white"></i>
+                        <i class="fa-solid fa-user-group fa-lg text-gray-400 group-hover:text-white"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
                     </a>
                 </li>
@@ -73,8 +71,29 @@
                         <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
                     </a>
                 </li>
-                
+
             </ul>
         </div>
     </aside>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggleButton = document.getElementById('toggleButton');
+        var sidebar = document.getElementById('default-sidebar');
+
+        if (toggleButton && sidebar) {
+            toggleButton.addEventListener('click', function (event) {
+                  event.stopPropagation();
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+        }
+        document.addEventListener('click', function (event) {
+            console.log(window.innerWidth);
+            if (window.innerWidth < 1024 ) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+    });
+</script>
+
