@@ -1,4 +1,4 @@
-<div class="overflow-hidden mt-20">
+<div class="overflow-hidden mt-12">
     <button type="button" class="" id="toggleButton">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -21,14 +21,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <i class="fa-solid fa-bolt fa-lg text-gray-400 group-hover:text-white"></i>
+                    <a href="{{ route('products.index') }}"
+                       class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group
+                            {{ request()->routeIs('products.index') ? 'bg-gray-500 text-yellow-500' : 'text-white' }}">
+                        <i class="fa-solid fa-bolt fa-lg
+                            {{ request()->routeIs('products.index') ? 'text-yellow-500 group-hover:text-yellow-600' : 'text-gray-400 group-hover:text-white' }} "></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
-                        <span
-                            class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+                        <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -75,6 +77,8 @@
             </ul>
         </div>
     </aside>
+    <div>
+    </div>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

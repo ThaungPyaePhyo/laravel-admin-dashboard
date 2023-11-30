@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrderController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +24,13 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('products', ProductController::class);
+Route::resource('orders',OrderController::class);
+
+//ajax
+Route::prefix('ajax')->group(function () {
+    Route::get('get/product',[ProductController::class,'getData'])->name('get.product');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
