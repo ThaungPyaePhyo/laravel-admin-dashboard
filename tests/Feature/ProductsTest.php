@@ -38,7 +38,7 @@ class ProductsTest extends TestCase
         $this->assertEquals(10, $data['recordsTotal']);
         $this->assertEquals(10, $data['recordsFiltered']);
     }
-    
+
 
     public function test_product_create()
     {

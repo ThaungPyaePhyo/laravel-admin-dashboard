@@ -6,10 +6,14 @@ use App\Models\Product;
 
 class ProductService
 {
+    public function connection()
+    {
+        return new Product();
+    }
     public function makeCollection()
     {
         $searchValue = request()->input('search.value');
-        $query = Product::query();
+        $query = Product::query()->orderBy('id','desc');
         if ($searchValue) {
             $query->where('title', 'LIKE', '%' . $searchValue . '%')
                     ->orWhere('size', 'LIKE' , '%' .$searchValue . '%');
@@ -35,4 +39,13 @@ class ProductService
         ];
     }
 
+    public function getDataById($id)
+    {
+        return $this->connection()->find($id);
+    }
+
+    public function update($data,$id)
+    {
+        return $this->getDataById($id)->update($data);
+    }
 }

@@ -1,4 +1,4 @@
-<div class="overflow-hidden mt-12">
+<div class="overflow-hidden mt-20">
     <button type="button" class="" id="toggleButton">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,6 @@
                         <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
                     </a>
                 </li>
-
             </ul>
         </div>
     </aside>
@@ -90,7 +89,6 @@
                   event.stopPropagation();
                 sidebar.classList.remove('-translate-x-full');
             });
-
         }
         document.addEventListener('click', function (event) {
             console.log(window.innerWidth);
