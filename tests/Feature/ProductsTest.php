@@ -40,7 +40,7 @@ class ProductsTest extends TestCase
     }
 
 
-    public function test_product_create()
+    public function test_product_store()
     {
         $data = [
             'title' => 'testing',
@@ -55,5 +55,51 @@ class ProductsTest extends TestCase
             ->assertRedirectToRoute('products.index');
 
         $this->assertDatabaseCount('products',1);
+    }
+
+    public function test_product_create()
+    {
+        $response = $this->get(route('products.create'));
+        $response->assertStatus(200)
+                ->assertViewIs('admin.product.create')
+                ->assertSeeText(['Title','Size', 'Price','Create','Cancel']);
+    }
+
+    public function test_product_edit()
+    {
+        $product = Product::factory()->create();
+        $response = $this->get(route('products.edit',$product->id));
+        $response->assertStatus(200)
+            ->assertViewIs('admin.product.edit')
+            ->assertSeeText([
+            'Title','Size','Price','Update','Cancel'
+            ]);
+    }
+
+    public function test_product_update()
+    {
+        $product = Product::factory()->create();
+        $data = [
+            'title' => 'update title',
+            'size' => 'update size',
+            'price' => 1000
+        ];
+        $response = $this->put(route('products.update',$product->id),$data);
+        $response->assertStatus(302)
+            ->assertSessionHas('success')
+            ->assertRedirectToRoute('products.index');
+        $this->assertDatabaseHas('products',$data + ['id' => $product->id]);
+
+    }
+
+    public function test_product_delete()
+    {
+        $product = Product::factory()->create();
+        $response = $this->json('DELETE', route('products.destroy',$product->id));
+        $response->assertStatus(200)
+            ->assertJson([
+                'message' => 1
+            ]);
+        $this->assertDatabaseMissing('products',['id' => $product->id]);
     }
 }
