@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Sidebar extends Component
+class ComfirmDelete extends Component
 {
     public function __construct()
     {
@@ -15,6 +15,6 @@ class Sidebar extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.admin.sidebar');
+        return view('components.admin.comfirm-delete');
     }
 }

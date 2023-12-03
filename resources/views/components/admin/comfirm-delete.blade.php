@@ -19,9 +19,9 @@
 
         const deleteFunction = function() {
             axios({
-                    method: 'DELETE',
-                    url: deleteUrl,
-                })
+                method: 'DELETE',
+                url: deleteUrl,
+            })
                 .then(function(response) {
                     let data = response.data.message;
                     if (data === 1) {
