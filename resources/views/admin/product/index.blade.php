@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="px-4 sm:ml-64">
-        <x-admin.header :title="'Products'" :name="'list'" :route="route('products.create')"/>
+        <x-admin.header :title="'Products'" :name="'List'" :route="route('products.create')"/>
         <div class="bg-gray-700 text-white border-gray-200 rounded-lg mx-28 p-5">
             <table id="product_table" class="display">
                 <thead>
