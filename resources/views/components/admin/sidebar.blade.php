@@ -21,6 +21,16 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('category.index') }}"
+                       class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group
+                            {{ request()->routeIs('category..index') ? 'bg-gray-500 text-yellow-500' : 'text-white' }}">
+                        <i class="fa-solid fa-bolt fa-lg
+                            {{ request()->routeIs('category.index') ? 'text-yellow-500 group-hover:text-yellow-600' : 'text-gray-400 group-hover:text-white' }} "></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Product Category</span>
+                        <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('products.index') }}"
                        class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group
                             {{ request()->routeIs('products.index') ? 'bg-gray-500 text-yellow-500' : 'text-white' }}">
