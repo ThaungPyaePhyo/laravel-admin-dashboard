@@ -41,4 +41,12 @@ class ProductCategoryTest extends TestCase
        $this->assertEquals(10,$data['recordsTotal']);
        $this->assertEquals(10,$data['recordsFiltered']);
     }
+
+    public function test_category_crete()
+    {
+        $response = $this->get(route('category.create'));
+        $response->assertStatus(200)
+            ->assertViewIs('admin.product_category.create')
+            ->assertSeeText(['Name','Description','Create','Cancel']);
+    }
 }
