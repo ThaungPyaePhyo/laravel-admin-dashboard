@@ -72,4 +72,5 @@ class ProductCategoryTest extends TestCase
             ->assertRedirectToRoute('category.index');
         $this->assertDatabaseCount('product_categories',1);
     }
+
 }

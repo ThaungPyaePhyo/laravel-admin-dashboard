@@ -38,34 +38,23 @@ class ProductCategoryController extends Controller
         return redirect()->route('category.index')->with('success','Category Successfully Created!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         $data = $this->service->getDataById($id);
         return view('admin.product_category.edit',compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
