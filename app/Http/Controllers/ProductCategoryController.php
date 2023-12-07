@@ -51,7 +51,8 @@ class ProductCategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = $this->service->getDataById($id);
+        return view('admin.product_category.edit',compact('data'));
     }
 
     /**

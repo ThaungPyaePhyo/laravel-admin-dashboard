@@ -49,4 +49,13 @@ class ProductCategoryTest extends TestCase
             ->assertViewIs('admin.product_category.create')
             ->assertSeeText(['Name','Description','Create','Cancel']);
     }
+
+    public function test_category_edit()
+    {
+        $data = ProductCategory::factory()->create();
+        $response = $this->get(route('category.edit',$data->id));
+        $response->assertStatus(200)
+            ->assertViewIs('admin.product_category.edit')
+            ->assertSeeText(['Name','Description','Edit','Cancel']);
+    }
 }

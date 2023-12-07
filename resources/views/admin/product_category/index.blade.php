@@ -50,7 +50,7 @@
                                 var deleteUrl = `/products/${data.id}`;
 
                                 return `
-                                    <a href="/products/${data.id}/edit" class="text-yellow-500">
+                                    <a href="/category/${data.id}/edit" class="text-yellow-500">
                                         <i class="fa-regular fa-pen-to-square fa-sm"></i>
                                         <span class="hover:underline">Edit</span>
                                     </a>
