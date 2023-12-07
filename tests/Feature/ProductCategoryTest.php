@@ -58,4 +58,18 @@ class ProductCategoryTest extends TestCase
             ->assertViewIs('admin.product_category.edit')
             ->assertSeeText(['Name','Description','Edit','Cancel']);
     }
+
+    public function test_category_store()
+    {
+        $data = [
+            'name' => 'test data',
+            'description' => 'test description'
+        ];
+
+        $response = $this->post(route('category.store'),$data);
+        $response->assertStatus(302)
+            ->assertSessionHas('success')
+            ->assertRedirectToRoute('category.index');
+        $this->assertDatabaseCount('product_categories',1);
+    }
 }
