@@ -73,4 +73,18 @@ class ProductCategoryTest extends TestCase
         $this->assertDatabaseCount('product_categories',1);
     }
 
+    public function test_category_update()
+    {
+        $data = [
+            'name' => 'update data',
+            'description' => 'update descrption'
+        ];
+        $item = ProductCategory::factory()->create();
+        $response = $this->put(route('category.update',$item->id),$data);
+        $response->assertStatus(302)
+            ->assertSessionHas('success')
+            ->assertRedirectToRoute('category.index');
+        $this->assertDatabaseHas('product_categories', $data + ['id' => $item->id]);
+    }
+
 }

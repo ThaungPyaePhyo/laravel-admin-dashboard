@@ -50,8 +50,11 @@ class ProductCategoryController extends Controller
         return view('admin.product_category.edit',compact('data'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(ProductCategoryRequest $request, string $id)
     {
+        $data = $request->validated();
+        $response = $this->service->update($data,$id);
+        return redirect()->route('category.index')->with('success','Category Successfully Updated!');
 
     }
 
