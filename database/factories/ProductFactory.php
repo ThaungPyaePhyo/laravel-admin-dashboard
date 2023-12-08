@@ -12,7 +12,7 @@ class ProductFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->sentence,
             'price' => $this->faker->numberBetween(1000,10000),
             'stock_quantity' => $this->faker->numberBetween(1,100),
             'category_id' => function() {

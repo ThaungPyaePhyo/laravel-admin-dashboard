@@ -33,7 +33,6 @@
                         dataTable.draw();
                         $(button).data('url', '');
 
-                        // Unbind the click event before rebinding
                         confirmDeleteButton.off('click', deleteFunction);
                     }
                 });

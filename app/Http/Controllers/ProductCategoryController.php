@@ -58,8 +58,12 @@ class ProductCategoryController extends Controller
 
     }
 
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $response = $this->service->getDataById($id);
+        $response->delete();
+        return response()->json([
+            'message' => 1,
+        ]);
     }
 }

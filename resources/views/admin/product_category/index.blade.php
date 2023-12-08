@@ -47,14 +47,14 @@
                             data: null,
                             name: 'action',
                            render: function(data, type, row) {
-                                var deleteUrl = `/products/${data.id}`;
+                                var deleteUrl = `/category/${data.id}`;
 
                                 return `
                                     <a href="/category/${data.id}/edit" class="text-yellow-500">
                                         <i class="fa-regular fa-pen-to-square fa-sm"></i>
                                         <span class="hover:underline">Edit</span>
                                     </a>
-                                    <button onclick="showConfirmModal(this,'product_table')" class="text-red-600" data-url="${deleteUrl}">
+                                    <button onclick="showConfirmModal(this,'product_category_table')" class="text-red-600" data-url="${deleteUrl}">
                                         <i class="fa-solid fa-trash fa-sm"></i>
                                         <span class="hover:underline">Delete</span>
                                     </button>

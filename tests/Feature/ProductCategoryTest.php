@@ -87,4 +87,15 @@ class ProductCategoryTest extends TestCase
         $this->assertDatabaseHas('product_categories', $data + ['id' => $item->id]);
     }
 
+    public function test_category_delete()
+    {
+        $category = ProductCategory::factory()->create();
+        $response = $this->json('DELETE',route('category.destroy',$category->id));
+        $response->assertStatus(200)
+            ->assertJson([
+                'message' => 1,
+            ]);
+        $this->assertDatabaseMissing('product_categories',['id' => $category->id]);
+    }
+
 }
