@@ -13,13 +13,12 @@ class ProductService
     public function makeCollection()
     {
         $searchValue = request()->input('search.value');
-        $query = Product::query()->orderBy('id','desc');
+        $query = $this->connection()->query()->orderBy('id','desc');
         if ($searchValue) {
             $query->where('title', 'LIKE', '%' . $searchValue . '%')
                     ->orWhere('size', 'LIKE' , '%' .$searchValue . '%');
         }
         $recordsFiltered = $query->count();
-
         $start = request('start', 0);
         $length = request('length', 10);
         $query->skip($start)->take($length);
