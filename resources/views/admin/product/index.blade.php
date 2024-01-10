@@ -9,7 +9,6 @@
                     <tr>
                         <th>id</th>
                         <th>Name</th>
-                        <th>Size</th>
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
@@ -40,10 +39,7 @@
                             data: 'title',
                             name: 'title'
                         },
-                        {
-                            data: 'size',
-                            name: 'size'
-                        },
+                     
                         {
                             data: 'price',
                             name: 'price'

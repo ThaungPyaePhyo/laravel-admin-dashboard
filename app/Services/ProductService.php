@@ -27,6 +27,7 @@ class ProductService
         $totalCount = $data->count();
 
         $rowId = $start + 1;
+        // dd($data);
         foreach ($data as $record) {
             $record['row_id'] = $rowId++;
         }
