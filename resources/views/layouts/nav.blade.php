@@ -1,5 +1,6 @@
-<nav class="fixed top-0 z-50 w-full bg-white text-slate-900 dark:text-white dark:bg-slate-900 border-gray-700 border">
-    <div class="flex justify-center sm:justify-between mx-10 py-4">
+<nav class="fixed top-0 z-50 w-full bg-white text-slate-900 dark:text-white dark:bg-slate-900 border
+ border-slate-200 dark:border-slate-950 shadow-xl">
+    <div class="flex justify-center sm:justify-between mx-10 py-2">
         <div class="hidden sm:block">
             <h1 class=" text-2xl font-bold font-mono cursor-pointer">Admin Demo</h1>
         </div>

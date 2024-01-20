@@ -1,9 +1,8 @@
-@extends('dashboard')
-
-@section('content')
+<x-admin-layout>
     <div class="px-4 sm:ml-64">
         <x-admin.header :title="'Products'" :name="'List'" :route="route('products.create')"/>
-        <div class="bg-white text-slate-900 border-slate-900 rounded-lg mx-28 p-5">
+        <div class="bg-white text-slate-900  dark:bg-gray-800 shadow-lg
+            border border-gray-200 dark:border-gray-900 px-8 dark:text-gray-100 rounded-lg mx-28 p-5">
             <table id="product_table" class="display">
                 <thead>
                     <tr>
@@ -18,8 +17,6 @@
             </table>
         </div>
     </div>
-@endsection
-@section('js')
     <script>
         $(document).ready(function() {
             $(document).ready(function() {
@@ -39,7 +36,7 @@
                             data: 'title',
                             name: 'title'
                         },
-                     
+
                         {
                             data: 'price',
                             name: 'price'
@@ -68,4 +65,4 @@
 
         })
     </script>
-@endsection
+</x-admin-layout>

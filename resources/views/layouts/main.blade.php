@@ -21,9 +21,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
-<body class="h-screen font-sans bg-white dark:bg-slate-900">
-    <x-admin.nav />
-    <x-admin.sidebar />
+<body class="h-screen font-sans bg-gray-100 dark:bg-slate-900">
+    <div class="container-2xl mx-0 px-0">
+        <header>
+            @include('layouts.nav')
+        </header>
+        <aside>
+            @include('layouts.sidebar')
+        </aside>
+        <main>
+            {{ $slot }}
+        </main>
+        <footer>
+            {{-- @include('layouts.') --}}
+        </footer>
+    </div>
     <x-admin.comfirm-delete />
     <x-admin.alert />
     @yield('content')

@@ -13,16 +13,15 @@ class ProductController extends Controller
     {
 
     }
-    
     public function index()
     {
-        return view('admin.product.index');
+        return view('product.index');
     }
 
 
     public function create()
     {
-        return view('admin.product.create');
+        return view('product.create');
     }
 
     public function store(ProductRequest $request)
@@ -40,7 +39,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $data = $this->service->getDataById($id);
-        return view('admin.product.edit',compact('data'));
+        return view('product.edit',compact('data'));
     }
 
     public function update(ProductRequest $request, string $id)

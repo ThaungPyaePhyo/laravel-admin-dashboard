@@ -1,6 +1,4 @@
-@extends('dashboard')
-
-@section('content')
+<x-admin-layout>
     <div class="px-4 sm:ml-64">
         <x-admin.header :title="'Products'" :name="'Edit'"/>
         <form action="{{ route('products.update', $data->id) }}" method="POST">
@@ -35,6 +33,5 @@
             </div>
         </form>
     </div>i
-@endsection
-@section('js')
-@endsection
+</x-admin-layout>
+

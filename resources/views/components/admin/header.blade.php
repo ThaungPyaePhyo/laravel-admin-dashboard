@@ -1,5 +1,5 @@
 @props(['title' => '', 'name' => '', 'route' => ''])
-<div class="mx-28 mb-4">
+<div class="mx-28 mb-4 text-slate-900 dark:text-white">
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
         <li class="inline-flex items-center">
             <a href="#"
@@ -19,7 +19,7 @@
 </div>
 <div class="flex justify-between mx-28 mb-6">
     <div class="flex align-middle flex-col">
-        <h1 class="text-white text-3xl font-bold">{{ $title }}</h1>
+        <h1 class="text-slate-900 text-3xl dark:text-white font-semibold">{{ $title }}</h1>
     </div>
     @if($route)
         <a class="rounded-lg p-2 bg-yellow-500 text-white text-sm font-bold px-4"

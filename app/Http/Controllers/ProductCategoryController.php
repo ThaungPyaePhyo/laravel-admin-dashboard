@@ -17,7 +17,7 @@ class ProductCategoryController extends Controller
     }
     public function index()
     {
-        return view('admin.product_category.index');
+        return view('product_category.index');
     }
 
     public function getData()
@@ -28,7 +28,7 @@ class ProductCategoryController extends Controller
 
     public function create()
     {
-        return view('admin.product_category.create');
+        return view('product_category.create');
     }
 
     public function store(ProductCategoryRequest $request)
@@ -47,7 +47,7 @@ class ProductCategoryController extends Controller
     public function edit(string $id)
     {
         $data = $this->service->getDataById($id);
-        return view('admin.product_category.edit',compact('data'));
+        return view('product_category.edit',compact('data'));
     }
 
     public function update(ProductCategoryRequest $request, string $id)
