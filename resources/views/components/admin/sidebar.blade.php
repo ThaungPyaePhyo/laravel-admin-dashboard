@@ -11,7 +11,7 @@
     <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0"
         aria-label="Sidebar">
 
-        <div class="h-full px-3 py-4 pt-20  overflow-y-auto bg-gray-50 dark:bg-gray-800" id="test">
+        <div class="h-full px-3 py-4 pt-20  overflow-y-auto bg-gray-100 dark:bg-slate-900" id="test">
             <ul class="space-y-2 font-medium py-4">
                 <li>
                     <a href="{{ route('dashboard') }}"
