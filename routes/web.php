@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('layouts.main');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('products', ProductController::class);
 Route::resource('orders',OrderController::class);

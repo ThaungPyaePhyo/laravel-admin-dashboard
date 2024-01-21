@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
-
 <body class="h-screen font-sans bg-gray-100 dark:bg-slate-900">
     <div class="container-2xl mx-0 px-0">
         <header>
@@ -30,10 +29,9 @@
             @include('layouts.sidebar')
         </aside>
         <main>
-            {{ $slot }}
+            {{ $slot ?? '' }}
         </main>
         <footer>
-            {{-- @include('layouts.') --}}
         </footer>
     </div>
     <x-admin.comfirm-delete />
