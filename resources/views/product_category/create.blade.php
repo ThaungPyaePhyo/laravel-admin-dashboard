@@ -6,7 +6,7 @@
             <x-layouts.text-input type="text" name="name"/>
             <x-layouts.textarea name="description"/>
         </x-layouts.form-style>
-        <x-layouts.form-button route="{{route('category.index')}}"/>
+        <x-layouts.form-button name="Create" route="{{route('category.index')}}"/>
     </form>
 </x-layouts.setting>
 </x-admin-layout>
