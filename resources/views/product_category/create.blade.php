@@ -1,12 +1,12 @@
 <x-admin-layout>
-<x-layouts.input-form :title="'Products'" :name="'Create'" >
-        <div>
-            <label>Name</label>
-            <input type="text" name="name" class="bg-white dark:bg-slate-700 border border-slate-500 rounded-xl w-full">
-        </div>
-        <div>
-            <label>Description</label>
-            <textarea name="description" class="bg-white dark:bg-slate-700 border border-slate-500 rounded-xl w-full"></textarea>
-        </div>
-    </x-layouts.input-form>
+<x-layouts.setting :title="'Product Category'" :name="'Create'" >
+    <form class="" action="{{ route('category.store') }}" method="POST">
+        @csrf
+        <x-layouts.form-style>
+            <x-layouts.text-input type="text" name="name"/>
+            <x-layouts.textarea name="description"/>
+        </x-layouts.form-style>
+        <x-layouts.form-button route="{{route('category.index')}}"/>
+    </form>
+</x-layouts.setting>
 </x-admin-layout>

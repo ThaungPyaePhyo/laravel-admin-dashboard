@@ -1,5 +1,5 @@
 <x-admin-layout>
-<x-layouts.input-form :title="'Products'" :name="'Create'" >
+<x-layouts.create-form :title="'Products'" :name="'Create'" >
                 <div>
                     <label>Title</label>
                     <input type="text" name="title" class="bg-gray-700 border rounded-xl w-full">
@@ -12,6 +12,6 @@
                     <label>Price</label>
                     <input type="number" name="price" class="bg-gray-700 border rounded-xl w-full">
                 </div>
-</x-layouts.input-form>
+</x-layouts.create-form>
 </x-admin-layout>
 
