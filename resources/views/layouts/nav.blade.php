@@ -5,11 +5,6 @@
         </div>
         <div class="">
             <div class="flex items-center justify-center gap-6">
-                <div class="relative">
-                    <input type="text" class="pl-8 text-white rounded-lg bg-white focus:outline-none" placeholder="search">
-                    <span class="absolute left-2 top-2 text-slate-900"><i class="fas fa-search"></i></span>
-                </div>
-
                 <div class="relative cursor-pointer">
                     <span class=""><i class="far fa-bell fa-xl"></i></span>
                     <span class="absolute right-0 left-4 -top-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
@@ -27,15 +22,6 @@
                         <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 light">light</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark">dark</a>
-{{--                        <form method="POST" action="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700">--}}
-{{--                            @csrf--}}
-
-{{--                            <x-responsive-nav-link :href="route('logout')"--}}
-{{--                                                   onclick="event.preventDefault();--}}
-{{--                                        this.closest('form').submit();">--}}
-{{--                                {{ __('Log Out') }}--}}
-{{--                            </x-responsive-nav-link>--}}
-{{--                        </form>--}}
                         <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                     </div>
                 </div>

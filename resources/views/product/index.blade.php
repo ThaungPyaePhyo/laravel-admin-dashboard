@@ -1,9 +1,5 @@
-<x-admin-layout>
-    <div class="px-4 sm:ml-64">
-        <x-admin.header :title="'Products'" :name="'List'" :route="route('products.create')"/>
-        <div class="bg-white text-slate-900  dark:bg-gray-800 shadow-lg
-            border border-gray-200 dark:border-gray-900 px-8 dark:text-gray-100 rounded-lg mx-28 p-5">
-            <table id="product_table" class="display">
+<x-layouts.index-form-style name="Product" :route="route('products.create')">
+<table id="table" class="display">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -15,12 +11,10 @@
                 <tbody>
                 </tbody>
             </table>
-        </div>
-    </div>
     <script>
         $(document).ready(function() {
             $(document).ready(function() {
-                $('#product_table').DataTable({
+                $('#table').DataTable({
                     processing: true,
                     serverSide: true,
                     responsive: false,
@@ -65,4 +59,6 @@
 
         })
     </script>
-</x-admin-layout>
+</x-layouts.index-form-style>
+
+
