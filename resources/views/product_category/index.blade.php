@@ -1,18 +1,18 @@
 <x-layouts.index-form-style name="Product Category" :route="route('category.create')">
-            <table id="table" class="display">
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+    <table id="table" class="stripe py-4" style="width: 100%">
+        <thead>
+        <tr class="bg-slate-400">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#table').DataTable({
                 processing: true,
                 serverSide: true,
@@ -36,19 +36,20 @@
                     {
                         data: null,
                         name: 'action',
-                        render: function(data, type, row) {
+                        render: function (data, type, row) {
+                            var editUrl = `/category/${data.id}/edit`;
                             var deleteUrl = `/category/${data.id}`;
 
                             return `
-                                    <a href="/category/${data.id}/edit" class="text-yellow-500">
-                                        <i class="fa-regular fa-pen-to-square fa-sm"></i>
-                                        <span class="hover:underline">Edit</span>
+                                <div class="flex items-center space-x-2">
+                                    <a href="${editUrl}" class="text-yellow-500">
+                                        <i class="fa-regular fa-pen-to-square fa-lg"></i>
                                     </a>
-                                    <button onclick="showConfirmModal(this,'product_category_table')" class="text-red-600" data-url="${deleteUrl}">
-                                        <i class="fa-solid fa-trash fa-sm"></i>
-                                        <span class="hover:underline">Delete</span>
+                                    <button onclick="showConfirmModal(this,'product_category_table')" class="text-red-600 ml-2" data-url="${deleteUrl}">
+                                        <i class="fa-solid fa-trash fa-lg"></i>
                                     </button>
-                                `;
+                                </div>
+                            `;
                         }
                     }
                 ],
@@ -56,4 +57,3 @@
         })
     </script>
 </x-layouts.index-form-style>
-

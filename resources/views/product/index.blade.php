@@ -42,14 +42,14 @@
                                 var deleteUrl = `/products/${data.id}`;
 
                                 return `
+                                <div class="flex items-center space-x-2">
                                     <a href="/products/${data.id}/edit" class="text-yellow-500">
-                                        <i class="fa-regular fa-pen-to-square fa-sm"></i>
-                                        <span class="hover:underline">Edit</span>
+                                        <i class="fa-regular fa-pen-to-square fa-lg"></i>
                                     </a>
                                     <button onclick="showConfirmModal(this,'product_table')" class="text-red-600" data-url="${deleteUrl}">
-                                        <i class="fa-solid fa-trash fa-sm"></i>
-                                        <span class="hover:underline">Delete</span>
+                                        <i class="fa-solid fa-trash fa-lg"></i>
                                     </button>
+                                </div>
                                 `;
                             }
                         }
