@@ -1,2 +1,2 @@
-import $ from 'jquery';
-import DataTable from "datatables.net-dt";
+// import $ from 'jquery';
+// import DataTable from "datatables.net-dt";

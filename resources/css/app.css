@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .dataTables_wrapper .dataTables_length select{
     width: 70px !important;
 }

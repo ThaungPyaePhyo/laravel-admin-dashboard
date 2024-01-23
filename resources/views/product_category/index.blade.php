@@ -1,4 +1,5 @@
 <x-admin-layout>
+    @section('title', 'Category')
     <div class="px-4 sm:ml-64">
         <x-admin.header :title="'Product Category'" :name="'List'" :route="route('category.create')"/>
         <div class="bg-white text-slate-900  dark:bg-slate-800 shadow-lg
@@ -18,7 +19,6 @@
         </div>
     </div>
     <script>
-        $(document).ready(function() {
             $(document).ready(function() {
                 $('#product_category_table').DataTable({
                     processing: true,
@@ -60,8 +60,6 @@
                         }
                     ],
                 });
-            });
-
         })
     </script>
 </x-admin-layout>

@@ -3,9 +3,9 @@
         <form class="" action="{{ route('products.store') }}" method="POST">
             @csrf
             <x-layouts.form-style>
-                <x-layouts.text-input type="text" name="title"/>
-                <x-layouts.text-input type="number" name="size"/>
-                <x-layouts.text-input type="number" name="number"/>
+                <x-text-input class="w-full mt-1" name="title"/>
+                <x-text-input class="w-full mt-1" name="size"/>
+                <x-text-input class="w-full mt-1" name="number"/>
             </x-layouts.form-style>
             <x-layouts.form-button name="Create" route="{{route('products.index')}}"/>
         </form>
