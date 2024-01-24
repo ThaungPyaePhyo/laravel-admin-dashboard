@@ -22,12 +22,12 @@
 </head>
 <body class="h-screen font-sans bg-gray-100 dark:bg-slate-900">
     <div class="container-2xl mx-0 px-0">
-        <header>
-            @include('layouts.nav')
-        </header>
         <aside>
             @include('layouts.sidebar')
         </aside>
+        <header>
+            @include('layouts.nav')
+        </header>
         <main>
             {{ $slot ?? '' }}
         </main>

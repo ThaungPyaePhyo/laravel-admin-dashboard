@@ -1,5 +1,5 @@
 @props(['title' => '', 'name' => '', 'route' => ''])
-<div class="mx-28 mb-2 text-slate-900 dark:text-white">
+<div class="container mx-auto mb-2 text-slate-900 dark:text-white">
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
         <li class="inline-flex items-center">
             <a href="#"
@@ -17,7 +17,7 @@
         </li>
     </ol>
 </div>
-<div class="flex justify-between mx-28 mb-6">
+<div class="container mx-auto flex justify-between mb-6">
     <div class="flex align-middle flex-col">
         <h1 class="text-slate-900 text-2xl dark:text-white font-semibold">{{ $title }}</h1>
     </div>
