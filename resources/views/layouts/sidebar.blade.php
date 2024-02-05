@@ -99,8 +99,7 @@
             });
         }
         document.addEventListener('click', function (event) {
-            console.log(window.innerWidth);
-            if (window.innerWidth < 1024 ) {
+             if (window.innerWidth < 1024 ) {
                 sidebar.classList.add('-translate-x-full');
             }
         });

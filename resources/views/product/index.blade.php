@@ -1,19 +1,18 @@
 <x-layouts.index-form-style name="Product" :route="route('products.create')">
-<table id="table" class="display">
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+    <table id="table" class="display py-2">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <script>
-        $(document).ready(function() {
-            $(document).ready(function() {
+             $(document).ready(function() {
                 $('#table').DataTable({
                     processing: true,
                     serverSide: true,
@@ -56,8 +55,6 @@
                     ],
                 });
             });
-
-        })
     </script>
 </x-layouts.index-form-style>
 

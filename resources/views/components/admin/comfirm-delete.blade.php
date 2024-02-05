@@ -14,8 +14,8 @@
         const confirmModal = $('#confirmModal');
         const confirmDeleteButton = $('#confirmDelete');
         const cancelDeleteButton = $('#cancelDelete');
-
         const dataTable = $('#' + table_id).DataTable();
+        console.log(dataTable);
 
         const deleteFunction = function() {
             axios({
@@ -25,10 +25,7 @@
                 .then(function(response) {
                     let data = response.data.message;
                     if (data === 1) {
-                        toastr.success('{{ session('success') }}', 'Success', {
-
-                        });
-
+                        toastr.success('{{ session('success') }}', 'Success', {});
                         confirmModal.addClass('hidden');
                         dataTable.draw();
                         $(button).data('url', '');

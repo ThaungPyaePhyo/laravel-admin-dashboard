@@ -51,7 +51,6 @@
 
         const themeCheck = () => {
             if (userTheme === 'dark' || (!userTheme && systemTheme)) {
-                console.log('dark')
                 document.documentElement.classList.add("dark");
                 darkMode.classList.add("hidden");
                 return;

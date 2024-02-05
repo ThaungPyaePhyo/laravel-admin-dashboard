@@ -1,7 +1,7 @@
 <x-layouts.index-form-style name="Product Category" :route="route('category.create')">
-    <table id="table" class="stripe py-4" style="width: 100%">
+    <table id="table" class="display py-2" style="width: 100%">
         <thead>
-        <tr class="bg-slate-400">
+        <tr class="">
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
